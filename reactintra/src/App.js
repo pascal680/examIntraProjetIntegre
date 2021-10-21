@@ -1,10 +1,12 @@
 import './App.css';
-import Student from './component/Student';
+import Guessing from './component/Guessing/Guessing';
+// import Student from './component/Student';
 
 function App() {
   return (
-    <div className="App">
-      <Student></Student>
+    <div style={{textAlign: 'center'}}>
+      <h1>Examen Intra</h1>
+      <Guessing></Guessing>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 package com.intra.controller;
 
-import com.intra.model.Student;
+import com.intra.model.Guess;
 import com.intra.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,20 +14,17 @@ public class StudentController {
     @Autowired
     private StudentService service;
 
-    @PostMapping(path = "/student/addStudent")
-        public Student saveStudent(@RequestBody Student student) {
-           return service.saveStudent(student);
+    @PostMapping(path = "/guess/addGuess")
+        public Guess saveGuess(@RequestBody Guess guess) {
+           return service.saveGuess(guess);
     }
 
-    @GetMapping(path = "/student/getAllStudents")
-        public List<Student> getAllStudents() {
-            return service.getAllStudents();
+    @GetMapping(path = "/guess/getAllGuess")
+        public List<Guess> getAllGuess() {
+            return service.getAllGuess();
     }
 
-    @DeleteMapping(path = "/student/delete/{id}")
-    public void deleteStudent(@PathVariable int id) {
-        service.deleteStudent(id);
-    }
+
 
 
 }

@@ -10,20 +10,23 @@ import javax.persistence.Id;
 
 @Entity
 @Data
-public class Student {
+public class Guess {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String name;
-    private String address;
 
-    public Student() {
+    private int guessUtilisateur;
+
+    private int guessRandom;
+
+    public Guess() {
     }
 
-    public Student(int id, String name, String address) {
-        this.id = id;
+    public Guess(String name, int guessUtilisateur, int guessRandom) {
         this.name = name;
-        this.address = address;
+        this.guessUtilisateur = guessUtilisateur;
+        this.guessRandom = guessRandom;
     }
 }

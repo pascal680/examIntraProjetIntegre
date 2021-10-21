@@ -1,7 +1,7 @@
 package com.intra.service;
 
-import com.intra.model.Student;
-import com.intra.repository.StudentRepository;
+import com.intra.model.Guess;
+import com.intra.repository.GuessRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,16 +11,13 @@ import java.util.List;
 public class StudentService {
 
     @Autowired
-    private StudentRepository repository;
+    private GuessRepository repository;
 
-    public Student saveStudent(Student student) {
-        return repository.save(student);
+    public Guess saveGuess(Guess guess) {
+        return repository.save(guess);
     }
-    public List<Student> getAllStudents(){
+
+    public List<Guess> getAllGuess(){
         return repository.findAll();
-    }
-
-    public void deleteStudent(int id) {
-        repository.deleteById(id);
     }
 }
